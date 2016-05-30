@@ -79,5 +79,7 @@ colnames(MiniCombinedDataSet) <- snames
   
 datamelt <- melt(MiniCombinedDataSet, id = snames[1:2], measure.vars = snames[3:68])
 tidydata <- dcast(datamelt, SubjectId + ActivityId ~ variable, mean)
-write.csv(tidydata,"tidydata.csv")
+#write.csv(tidydata,"tidydata.csv")
+write.table(tidydata,"tidydata.txt", row.names = FALSE)
+
    
